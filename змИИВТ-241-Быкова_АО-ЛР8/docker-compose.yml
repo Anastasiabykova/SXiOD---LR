@@ -1,0 +1,11 @@
+services:
+ dbpost:
+  image: postgres:latest
+  environment:
+   POSTGRES_DB: db8lab
+   POSTGRES_USER: usr8lab
+   POSTGRES_PASSWORD: pass8lab
+  volumes:
+   - ./init_scripts/init.sql:/docker-entrypoint-initdb.d/init.sql
+  ports:
+   - 5432:5432

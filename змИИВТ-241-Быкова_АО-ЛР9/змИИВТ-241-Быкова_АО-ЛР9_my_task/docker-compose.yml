@@ -1,0 +1,11 @@
+services:
+ dbpost:
+  image: postgres:latest
+  environment:
+   POSTGRES_DB: db9mylab
+   POSTGRES_USER: usr9mylab
+   POSTGRES_PASSWORD: pass9mylab
+  volumes:
+   - ./init_scripts/init2.sql:/docker-entrypoint-initdb.d/init2.sql
+  ports:
+   - 5432:5432
